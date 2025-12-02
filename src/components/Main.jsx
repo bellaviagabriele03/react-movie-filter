@@ -1,5 +1,6 @@
 
 import Card from "./Card";
+import Form from "./Form";
 
 function Main() {
 
@@ -9,7 +10,7 @@ function Main() {
                 <div className="row">
                     <Card />
                 </div>
-
+                <Form />
             </div>
         </main>
     )
