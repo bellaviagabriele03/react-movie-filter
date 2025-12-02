@@ -5,6 +5,7 @@ function Card() {
     const [film, setFilm] = useState("")
     const [arrayFilm, setArrayfilm] = useState(movieArray)
     const [genre, setGenre] = useState("")
+    const [select, setSelect] = useState("nessuna")
 
 
     function addfilm(event) {
@@ -19,13 +20,40 @@ function Card() {
         setGenre("")
     }
 
-
+    useEffect(() => {
+        console.log(`l'opzione selezionata è:${select}`);
+        const proxy = [];
+        for(let i = 0; i < arrayFilm.length; i++) {
+            if(arrayFilm[i].genre === select) {
+                proxy.push(arrayFilm[i])
+            }
+        }
+        console.log(proxy);
+        
+        
+    }, [select])
 
 
     return (
         <>
 
             <div className="col-12">
+                <label className="form-label" htmlFor="selectGenre"><strong>Filtra i film per Genere:</strong></label>
+
+                <select
+                    className="form-select bg-secondary text-white"
+                    id="selectGenre"
+                    onChange={function(event) {
+                        setSelect(event.target.value)
+                    }}
+                    value={select}
+                >   
+                    <option value="Selezione un genere">Selezione un genere</option>
+                    <option value="Fantascienza">Fantascienza</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Azione">Azione</option>
+                    <option value="Romantico">Romantico</option>
+                </select>
 
             </div>
 
