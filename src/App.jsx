@@ -2,21 +2,16 @@ import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import movieArray from './assets/data.js';
+import Header from './components/Header.jsx';
+import Main from './components/Main.jsx';
 
 function App() {
 
   
-  
-  
-  
   return (
     <>
-      <div className="container">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Totam natus dolore suscipit nesciunt mollitia officia asperiores.
-        Quo repudiandae quos, esse placeat pariatur facere explicabo excepturi nesciunt
-        necessitatibus ipsum voluptatibus magni?</div>
-        
+      <Header />
+      <Main />
     </>
   )
 }
